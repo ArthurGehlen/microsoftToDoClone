@@ -1,0 +1,158 @@
+@use '../variables'
+@use '../mixins'
+
+#aside
+    height: 100%
+    background-color: variables.$aside_bg_color
+
+    .user_area
+        padding: .8rem
+        display: flex
+        gap: 1rem
+
+        .user_avatar
+            background-color: variables.$user_picture_bg_color
+            color: variables.$aside_font_color
+            @include mixins.align($justify_content: center, $align_items: center, $flex_direction: row)
+            font-size: 1.2rem
+            width: 3rem
+            height: 3rem
+            border-radius: 50%
+
+        .user_info
+            @include mixins.align($justify_content: center, $align_items: start, $flex_direction: column)
+
+            .user_name
+                color: variables.$aside_font_color
+                font-weight: bold
+
+            .user_email
+                color: variables.$user_email_font_color
+                font-size: .8rem
+
+    .searchbar
+        position: relative
+        padding: .8rem
+
+        input
+            width: 100%
+            padding: .6rem
+            background: transparent
+            border: 1px solid #333
+            border-bottom: 2px solid #999
+            border-radius: variables.$input_border_radius
+            color: variables.$input_font_color
+
+        :focus
+            outline: none
+            border-bottom: 2px solid variables.$input_border_bottom_focus_color
+            color: variables.$aside_font_color
+
+        ::placeholder
+            color: variables.$user_email_font_color
+
+        svg
+            transform: translate(-50%, -50%)
+            position: absolute
+            top: 50%
+            right: 5%
+            color: variables.$aside_font_color
+
+    .default_lists
+        padding: .8rem
+
+        ul
+            list-style: none
+
+            li
+                height: 2.5rem
+                padding: .4rem
+                border-radius: variables.$aside_links_border_radius
+                @include mixins.align($justify_content: flex-start, $align_items: center, $flex_direction: row)
+
+            li:not(first-child)
+                margin-bottom: .6rem
+
+            :hover
+                background-color: variables.$aside_links_bg_color_hover
+
+            .active
+                border-radius: variables.$aside_links_border_radius
+                background-color: variables.$aside_links_bg_color_hover
+                transform: translate(-50%, -50%)
+                left: 0
+                top: 50%
+                height: 2rem
+                width: .4rem
+                border-radius: 20%
+                background-color: red
+                position: absolute
+
+            a
+                cursor: default
+                width: 100%
+                height: 100%
+                @include mixins.align($justify_content: flex-start, $align_items: center, $flex_direction: row)
+                gap: .8rem
+                text-decoration: none
+                color: variables.$aside_font_color
+
+                span
+                    font-size: .85rem
+
+                svg
+                    font-size: 1.2rem
+
+                #meudia
+                    color: variables.$meudia_icon_color
+
+                #importante
+                    color: variables.$importante_icon_color
+
+                #planejado
+                    color: variables.$planejado_icon_color
+
+                #atribuido
+                    color: variables.$atribuido_icon_color
+
+                #tarefas
+                    color: variables.$tarefas_icon_color
+
+    .separator
+        margin: .8rem 0
+        height: 1px
+        width: 100%
+        background-color: variables.$aside_separator_color
+
+    .adding_lists_area
+        height: 29.5rem
+        padding: .8rem
+        @include mixins.align($justify_content: space-between, $align_items: flex-start, $flex_direction: column)
+
+        .user_lists
+            height: 95%
+            width: 100%
+
+        .buttons
+            width: 100%
+            display: flex
+            gap: .6rem
+
+            .add_list_btn
+                @include mixins.add_button($width: 75%)
+                @include mixins.align($justify_content: flex-start, $align_items: center, $flex_direction: row)
+                gap: .6rem
+
+                span
+                    font-size: .95rem
+
+                svg
+                    font-size: 1.8rem
+
+            .add_group_btn
+                @include mixins.add_button($width: 25%)
+                @include mixins.align($justify_content: center, $align_items: center, $flex_direction: row)
+                font-size: 1.4rem
+
+            :hover
+                background-color: variables.$aside_links_bg_color_hover

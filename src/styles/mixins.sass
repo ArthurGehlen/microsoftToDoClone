@@ -1,0 +1,17 @@
+@use './variables'
+
+@mixin align($justify_content, $align_items, $flex_direction)
+    display: flex
+    justify-content: $justify_content
+    align-items: $align_items
+    flex-direction: $flex_direction
+
+@mixin add_button($width)
+    width: $width
+    padding: .4rem
+    background: transparent 
+    cursor: default
+    color: variables.$aside_font_color
+    border-radius: variables.$aside_links_border_radius
+    border: none
+    text-decoration: none
