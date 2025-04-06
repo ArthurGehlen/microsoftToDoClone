@@ -1,0 +1,20 @@
+@use '../variables'
+@use '../mixins'
+
+.app_layout
+    display: grid
+    grid-auto-columns: 18rem 1fr
+    grid-template-areas: 'aside main-content'
+    height: 100vh
+
+aside
+    grid-area: aside
+
+.main_content
+    height: 100%
+    width: 100%
+    padding: 2.5rem
+    @include mixins.align($justify_content: space-between, $align_items: flex-start, $flex_direction: column)
+    grid-area: main-content
+    background-color: variables.$body_bg_color
+    overflow-y: auto

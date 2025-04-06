@@ -1,11 +1,11 @@
-import Aside from "./components/Aside"
-import MainContent from "./components/MainContent"
+import { BrowserRouter as Router } from 'react-router-dom'
+import AppLayout from './components/AppLayout'
 
 function App() {
   return (
-    <>
-      <Aside />
-    </>
+    <Router>
+      <AppLayout />
+    </Router>
   )
 }
 

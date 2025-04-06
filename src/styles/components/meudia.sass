@@ -1,0 +1,79 @@
+@use '../variables'
+@use '../mixins'
+
+header
+    @include mixins.align($justify_content: flex-start, $align_items: flex-start, $flex_direction: column)
+    gap: .5rem
+    width: 100%
+
+    h1, p
+        font-weight: 500
+        color: variables.$meudia_icon_color
+
+    p
+        font-size: .8rem
+
+    .title
+        width: 100%
+        @include mixins.align($justify_content: space-between, $align_items: center, $flex_direction: row)
+
+        .options
+            display: flex
+            gap: 1rem
+
+        button
+            @include mixins.align($justify_content: center, $align_items: center, $flex_direction: row)
+            padding: .4rem
+            font-size: 1.4rem
+            border: none
+            background-color: variables.$body_buttons_bg_color
+            color: variables.$body_buttons_font_color
+            border-radius: variables.$aside_links_border_radius
+
+        button:hover
+            background-color: variables.$body_sugeston_button_bg_color_hover
+
+        .theme_btn
+            padding: .4rem
+            background: transparent
+
+        .theme_btn:hover
+            background-color: variables.$body_buttons_bg_color
+
+.user_todos_area
+    @include mixins.align($justify_content: center, $align_items: flex-start, $flex_direction: column)
+    height: 100%
+    width: 100%
+
+    .empty_list_container
+        width: 100%
+        @include mixins.align($justify_content: center, $align_items: center, $flex_direction: column)
+        color: variables.$meudia_icon_color
+
+        h2
+            font-size: 1.2rem
+            margin-bottom: .6rem
+
+        p
+            font-size: .8rem
+
+.input_todo_container
+    height: 6%
+    width: 100%
+
+    input
+        width: 100%
+        height: 100%
+        padding: .8rem 2rem
+        border-radius: variables.$aside_links_border_radius
+        border: none
+        background-color: variables.$body_buttons_bg_color
+        color: variables.$meudia_icon_color
+        position: relative
+
+    input::placeholder
+        color: variables.$meudia_icon_color
+
+    input:focus
+        background-color: variables.$body_sugeston_button_bg_color_hover
+        outline: none

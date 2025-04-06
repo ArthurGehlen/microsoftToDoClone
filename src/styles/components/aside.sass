@@ -40,12 +40,12 @@
             background: transparent
             border: 1px solid #333
             border-bottom: 2px solid #999
-            border-radius: variables.$input_border_radius
-            color: variables.$input_font_color
+            border-radius: variables.$aside_input_border_radius
+            color: variables.$aside_input_font_color
 
         :focus
             outline: none
-            border-bottom: 2px solid variables.$input_border_bottom_focus_color
+            border-bottom: 2px solid variables.$aside_input_border_bottom_focus_color
             color: variables.$aside_font_color
 
         ::placeholder
@@ -119,18 +119,18 @@
                     color: variables.$tarefas_icon_color
 
     .separator
-        margin: .8rem 0
+        margin: 0
         height: 1px
         width: 100%
         background-color: variables.$aside_separator_color
 
     .adding_lists_area
-        height: 29.5rem
-        padding: .8rem
+        height: 31.5rem
+        padding: 0rem 1rem 0rem
         @include mixins.align($justify_content: space-between, $align_items: flex-start, $flex_direction: column)
 
         .user_lists
-            height: 95%
+            height: 100%
             width: 100%
 
         .buttons

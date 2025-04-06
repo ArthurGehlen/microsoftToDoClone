@@ -1,4 +1,4 @@
-import MainContent from '../components/MainContent'
+import { LuColumns3 } from "react-icons/lu" // Planejado
 
 function Planejado() {
     return <div>Planejado</div>
