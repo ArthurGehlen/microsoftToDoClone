@@ -1,7 +1,9 @@
 // Svg's / Images
 import { LiaLightbulbSolid } from "react-icons/lia"
 import { HiOutlineDotsHorizontal } from "react-icons/hi"
-import empty_todo_container from '../images/empty_todo_img.png'
+import { IoAdd } from "react-icons/io5" // Add Todo input image
+import { GoDot } from "react-icons/go" // Add Todo input image (FOCUS)
+import empty_todo_image from '../images/meudia_empty_todo_img.png'
 
 // Hooks
 import { useState, useEffect } from "react"
@@ -9,6 +11,9 @@ import { useState, useEffect } from "react"
 // Utils
 import '../styles/components/meudia.sass'
 import FormatedDates from "../utils/dates"
+
+// Components
+import ToDoList from "../components/todo_list/ToDoList"
 
 const get_date = () => {
     let date = new Date()
@@ -20,9 +25,9 @@ const get_date = () => {
     return `${FormatedDates.get_weekday(weekday)}, ${day} de ${FormatedDates.get_month(month)}`
 }
 
-let user_todo_list = []
-
 function MeuDia() {
+    const [inputFocus, setInputFocus] = useState(false)
+
     return (
         <>
             <header>
@@ -42,20 +47,26 @@ function MeuDia() {
                 <p className="date">{get_date()}</p>
             </header>
 
-            <section className="user_todos_area">
-                {user_todo_list.length < 1 &&
-                    <div className="empty_list_container">
-                        <img src={empty_todo_container} alt="" />
-                        <h2>Foque em seu dia</h2>
-                        <p>
-                            Realize tarefas com o Meu Dia, uma <br />
-                            lista que é atualizada todos os dias.
-                        </p>
-                    </div>}
-            </section>
+            <ToDoList
+                title='Foque em seu dia'
+                empty_image={empty_todo_image}
+                text='Realize tarefas com o Meu Dia, uma
+lista que é atualizada todos os dias.' />
 
             <section className="input_todo_container">
-                <input type="text" placeholder="Adicionar uma tarefa" />
+                {inputFocus ?
+                    <span id="circle">
+                        <GoDot />
+                    </span> :
+                    <span>
+                        <IoAdd />
+                    </span>
+                }
+                <input type="text"
+                    placeholder="Adicionar uma tarefa"
+                    onFocus={() => setInputFocus(true)}
+                    onBlur={() => setInputFocus(false)}
+                />
             </section>
         </>
     )

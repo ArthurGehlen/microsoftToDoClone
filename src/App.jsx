@@ -3,7 +3,7 @@ import AppLayout from './components/AppLayout'
 
 function App() {
   return (
-    <Router>
+    <Router basename='/microsoftToDoClone/'>
       <AppLayout />
     </Router>
   )
