@@ -19,7 +19,7 @@ let FormatedDates = class FormatedDates {
                 return 'quarta-feira'
             }
             case 4: {
-                return 'quinta'
+                return 'quinta-feira'
             }
             case 5: {
                 return 'sexta'

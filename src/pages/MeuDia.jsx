@@ -30,7 +30,7 @@ function MeuDia() {
 
     return (
         <>
-            <header>
+            <header className="meudia_header">
                 <div className="title">
                     <h1>Meu Dia</h1>
 
@@ -50,6 +50,7 @@ function MeuDia() {
             <ToDoList
                 title='Foque em seu dia'
                 empty_image={empty_todo_image}
+                page_color='meudia'
                 text='Realize tarefas com o Meu Dia, uma
 lista que é atualizada todos os dias.' />
 
@@ -63,6 +64,7 @@ lista que é atualizada todos os dias.' />
                     </span>
                 }
                 <input type="text"
+                    className="meudia_input"
                     placeholder="Adicionar uma tarefa"
                     onFocus={() => setInputFocus(true)}
                     onBlur={() => setInputFocus(false)}

@@ -1,19 +1,18 @@
 @use '../variables'
 @use '../mixins'
 
-.meudia_header
+.atribuido_header
     @include mixins.align($justify_content: start, $align_items: start, $flex_direction: column)
     gap: .5rem
     width: 100%
 
-    h1, p
-        font-weight: 500
-        color: variables.$meudia_icon_color
+    h1
+        font-size: 1.8rem
+        color: variables.$atribuido_icon_color
+        @include mixins.align($justify_content: center, $align_items: center, $flex_direction: row)
+        gap: .4rem
 
-    p
-        font-size: .8rem
-
-    .title
+    .importante_title
         width: 100%
         @include mixins.align($justify_content: space-between, $align_items: center, $flex_direction: row)
 
@@ -47,7 +46,7 @@
 
     span
         font-size: 1.75rem
-        color: variables.$meudia_icon_color
+        color: variables.$atribuido_icon_color
         position: absolute
         height: 100%
         width: 3rem
@@ -63,10 +62,10 @@
         border-radius: variables.$aside_links_border_radius
         border: none
         background-color: variables.$body_buttons_bg_color
-        color: variables.$meudia_icon_color
+        color: variables.$atribuido_icon_color
 
     input::placeholder
-        color: variables.$meudia_icon_color
+        color: variables.$atribuido_icon_color
 
     input:focus
         background-color: variables.$body_sugeston_button_bg_color_hover
