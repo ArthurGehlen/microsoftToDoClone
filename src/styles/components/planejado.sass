@@ -38,35 +38,3 @@
 
         .theme_btn:hover
             background-color: variables.$body_buttons_bg_color
-
-.input_todo_container
-    height: 6%
-    width: 100%
-    position: relative
-
-    span
-        font-size: 1.75rem
-        color: variables.$planejado_icon_color
-        position: absolute
-        height: 100%
-        width: 3rem
-        @include mixins.align($justify_content: center, $align_items: center, $flex_direction: row)
-
-    #circle
-        font-size: 3rem !important
-
-    .planejado_input
-        width: 100%
-        height: 100%
-        padding: .8rem 3rem
-        border-radius: variables.$aside_links_border_radius
-        border: none
-        background-color: variables.$body_buttons_bg_color
-        color: variables.$planejado_icon_color
-
-    .planejado_input::placeholder
-        color: variables.$planejado_icon_color
-
-    .planejado_input:focus
-        background-color: variables.$body_sugeston_button_bg_color_hover
-        outline: none

@@ -1,12 +1,8 @@
 // Svg's / Images
 import { LiaLightbulbSolid } from "react-icons/lia"
 import { HiOutlineDotsHorizontal } from "react-icons/hi"
-import { IoAdd } from "react-icons/io5" // Add Todo input image
-import { GoDot } from "react-icons/go" // Add Todo input image (FOCUS)
-import empty_todo_image from '../images/meudia_empty_todo_img.png'
 
-// Hooks
-import { useState, useEffect } from "react"
+import empty_todo_image from '../images/meudia_empty_todo_img.png'
 
 // Utils
 import '../styles/components/meudia.sass'
@@ -26,8 +22,6 @@ const get_date = () => {
 }
 
 function MeuDia() {
-    const [inputFocus, setInputFocus] = useState(false)
-
     return (
         <>
             <header className="meudia_header">
@@ -53,23 +47,6 @@ function MeuDia() {
                 page_color='meudia'
                 text='Realize tarefas com o Meu Dia, uma
 lista que é atualizada todos os dias.' />
-
-            <section className="input_todo_container">
-                {inputFocus ?
-                    <span id="circle">
-                        <GoDot />
-                    </span> :
-                    <span>
-                        <IoAdd />
-                    </span>
-                }
-                <input type="text"
-                    className="meudia_input"
-                    placeholder="Adicionar uma tarefa"
-                    onFocus={() => setInputFocus(true)}
-                    onBlur={() => setInputFocus(false)}
-                />
-            </section>
         </>
     )
 }
