@@ -1,19 +1,20 @@
 // Svg's / Images
 import empty_todo_image from '../images/atribuido_empty_todo_img.png'
-import { FiUser } from "react-icons/fi" 
+import { FiUser } from "react-icons/fi"
 import { HiOutlineDotsHorizontal } from "react-icons/hi"
 
 // Utils
-import '../styles/components/atribuido.sass'
+import '../styles/pages/atribuido.sass'
 
 // Components
 import ToDoList from '../components/todo_list/ToDoList'
+import Header from '../components/Header'
 
 function AtribuidoAMim() {
     return (
         <>
-            <header className="atribuido_header">
-                <div className="atribuido_title">
+            <Header page='atribuido'>
+                <div className="title">
                     <h1>
                         <FiUser />
                         Atribuído a mim
@@ -25,7 +26,7 @@ function AtribuidoAMim() {
                         </button>
                     </div>
                 </div>
-            </header>
+            </Header>
 
             <ToDoList
                 title=''

@@ -4,16 +4,17 @@ import empty_todo_image from '../images/importante_empty_todo_img.png'
 import { HiOutlineDotsHorizontal } from "react-icons/hi"
 
 // Utils
-import '../styles/components/importante.sass'
+import '../styles/pages/importante.sass'
 
 // Components
 import ToDoList from '../components/todo_list/ToDoList'
+import Header from "../components/Header"
 
 function Importante() {
     return (
         <>
-            <header className="importante_header">
-                <div className="importante_title">
+            <Header page='importante'>
+                <div className="title">
                     <h1>
                         <GoStar />
                         Importante
@@ -25,7 +26,7 @@ function Importante() {
                         </button>
                     </div>
                 </div>
-            </header>
+            </Header>
 
             <ToDoList
                 title=''

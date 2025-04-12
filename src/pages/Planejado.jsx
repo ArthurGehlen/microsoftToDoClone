@@ -1,19 +1,20 @@
 // Svg's / Images
-import { LuColumns3 } from "react-icons/lu" 
+import { LuColumns3 } from "react-icons/lu"
 import empty_todo_image from '../images/planejado_empty_todo_img.png'
 import { HiOutlineDotsHorizontal } from "react-icons/hi"
 
 // Utils
-import '../styles/components/planejado.sass'
+import '../styles/pages/planejado.sass'
 
 // Components
 import ToDoList from '../components/todo_list/ToDoList'
+import Header from "../components/Header"
 
 function Planejado() {
     return (
         <>
-            <header className="planejado_header">
-                <div className="planejado_title">
+            <Header page='planejado'>
+                <div className="title">
                     <h1>
                         <LuColumns3 />
                         Planejado
@@ -25,7 +26,7 @@ function Planejado() {
                         </button>
                     </div>
                 </div>
-            </header>
+            </Header>
 
             <ToDoList
                 title=''

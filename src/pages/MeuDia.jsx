@@ -5,11 +5,12 @@ import { HiOutlineDotsHorizontal } from "react-icons/hi"
 import empty_todo_image from '../images/meudia_empty_todo_img.png'
 
 // Utils
-import '../styles/components/meudia.sass'
+import '../styles/pages/meudia.sass'
 import FormatedDates from "../utils/dates"
 
 // Components
 import ToDoList from "../components/todo_list/ToDoList"
+import Header from "../components/Header"
 
 const get_date = () => {
     let date = new Date()
@@ -24,7 +25,7 @@ const get_date = () => {
 function MeuDia() {
     return (
         <>
-            <header className="meudia_header">
+            <Header page='meudia'>
                 <div className="title">
                     <h1>Meu Dia</h1>
 
@@ -39,7 +40,7 @@ function MeuDia() {
                 </div>
 
                 <p className="date">{get_date()}</p>
-            </header>
+            </Header>
 
             <ToDoList
                 title='Foque em seu dia'
